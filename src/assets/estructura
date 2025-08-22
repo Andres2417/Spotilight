@@ -1,0 +1,50 @@
+spotilight/
+│── node_modules/           # dependencias instaladas (auto-generado)
+│── public/                 # archivos estáticos accesibles públicamente
+│   ├── index.html          # HTML base donde React monta la app
+│   ├── favicon.ico
+│   └── assets/             # imágenes, logos, etc.
+│
+│── src/                    # código principal de la aplicación
+│   ├── api/                # llamadas a APIs externas (ej. Deezer/Spotify)
+│   │   └── deezer.js
+│   │
+│   ├── assets/             # imágenes, íconos, fuentes locales
+│   │   └── logo.png
+│   │
+│   ├── components/         # componentes reutilizables
+│   │   ├── Player/         # reproductor (play/pause, barra progreso)
+│   │   ├── Navbar/         # barra lateral o superior
+│   │   ├── SongCard.jsx    # tarjeta para mostrar una canción
+│   │   └── SearchBar.jsx
+│   │
+│   ├── contexts/           # Context API para manejar estado global
+│   │   └── PlayerContext.jsx
+│   │
+│   ├── hooks/              # custom hooks (ej. useFetchSongs, useAuth)
+│   │   └── useFetchSongs.js
+│   │
+│   ├── layouts/            # layouts base de la app (ej. con sidebar fija)
+│   │   └── MainLayout.jsx
+│   │
+│   ├── pages/              # vistas completas
+│   │   ├── Home.jsx
+│   │   ├── Search.jsx
+│   │   ├── Playlist.jsx
+│   │   └── SongDetail.jsx
+│   │
+│   ├── styles/             # archivos de estilos globales
+│   │   └── index.css       # Tailwind importado aquí
+│   │
+│   ├── utils/              # helpers (ej. formatear duración, convertir ms a min:seg)
+│   │   └── formatTime.js
+│   │
+│   ├── App.jsx             # raíz de la app con rutas
+│   ├── main.jsx            # punto de entrada (ReactDOM)
+│   └── routes.jsx          # definición de rutas con React Router
+│
+│── .gitignore
+│── package.json
+│── tailwind.config.js
+│── postcss.config.js
+│── vite.config.js          # config de Vite
