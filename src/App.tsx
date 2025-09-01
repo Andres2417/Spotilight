@@ -10,7 +10,6 @@ function App() {
 
 
   return (
-    <div className='container'>
       <BrowserRouter>
       <Routes>
         <Route path='/' element={<Home></Home>}></Route>
@@ -18,7 +17,6 @@ function App() {
         <Route path='/Search/:id' element={<Search></Search>}></Route>
       </Routes>
       </BrowserRouter>
-    </div>
   )
 }
 

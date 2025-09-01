@@ -1,33 +1,36 @@
-import React, { useEffect, useState } from "react";
+import { useEffect, useState } from "react";
 import { recomendedTracks } from "../api/DeezerApi";
-import '../App.css' //TEMPORAL
+import Styles from '../modules/HomePage.module.css';
 
 const Home = () => {
-    const [recomended, setRecomended] = useState(null)
+    const [recomended, setRecomended] = useState<any[]>([])
 
     useEffect(() => {
         recomendedTracks(setRecomended)
     }, [])
     return (
-        <>
 
 
-            <div className="card-container">
-                {recomended != null ? (
-                    recomended.map(recomend => (
-                        <div key={recomend.id}>
-                            <div className="card" id="card">
-                                <div className="content">
-                                    <a href={`/infosong/${recomend.id}`}>{recomend.title}</a>
-                                    <img src={recomend.album.cover_small} alt=""/>
+
+        <div className={Styles.cardContainer}>
+            {recomended != null ? (
+                recomended.map(recomend => (
+                    <div className={Styles.container} key={recomend.id}>
+                        <div className={Styles.card} id="card" style={{ '--after-bg': `url(${recomend.album.cover_medium})` }}>
+                            <a href={`/infosong/${recomend.id}`}>
+                                <div className={Styles.content} >
+                                    {recomend.title}
                                 </div>
-                            </div>
+                            </a>
                         </div>
-                    ))) : ("no hay contenido que mostrar")}
+                    </div>
 
-            </div>
 
-        </>
+                ))) : ("no hay contenido que mostrar")}
+
+        </div>
+
+
     )
 }
 
