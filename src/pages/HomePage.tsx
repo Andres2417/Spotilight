@@ -16,13 +16,18 @@ const Home = () => {
             {recomended != null ? (
                 recomended.map(recomend => (
                     <div className={Styles.container} key={recomend.id}>
-                        <div className={Styles.card} id="card" style={{ '--after-bg': `url(${recomend.album.cover_medium})` }}>
-                            <a href={`/infosong/${recomend.id}`}>
-                                <div className={Styles.content} >
-                                    {recomend.title}
+                        <a href={`/infosong/${recomend.id}`}>
+                            <div className={Styles.card} id="card">
+                                <div className={Styles.content}>
+                                    <div className={Styles.blur}>
+                                        <div className={Styles.cover}>
+                                            <img src={recomend.album.cover_medium} alt="" />
+                                        </div>
+                                        <h2>{recomend.title}</h2>
+                                    </div>
                                 </div>
-                            </a>
-                        </div>
+                            </div>
+                        </a>
                     </div>
 
 
